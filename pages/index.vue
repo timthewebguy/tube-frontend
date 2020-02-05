@@ -13,8 +13,8 @@
 	</div><!--section3-->
 
     <div class="buttons">
-        <a href="/register"><button class="purplebutton" id="button1" to="/register">Join the Beta</button></a>
-        <a href="/login"><button class="purplebutton" id="button1" to="/login">Login</button></a>
+        <a href="/register"><button class="purplebutton topbuttons" id="registerbutton" to="/register">Register</button></a>
+        <a href="/login"><button class="purplebutton topbuttons" id="loginbutton" to="/login">Login</button></a>
     </div>
 
 
@@ -216,11 +216,27 @@ a{
 	box-shadow: #a0a0a0a6 1px 4px 20px 3px;
 }
 
-#button1{
+.topbuttons{
 	margin: 0 auto;
-	margin-top: 10%;
-	padding: 20px 30px;
+	font-size: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
+
+#registerbutton{
+	/*margin: 0 auto;
+	margin-top: 10%;*/
+	padding-left: 25px;
+	padding-right: 25px;
+	/*padding: 16px 25px;*/
+}
+
+#loginbutton{
+		/*padding: 16px 42px;*/
+		margin-top: 4%;
+		padding-left: 37px;
+		padding-right: 37px;
+	}
 
 .text{
 	font-family: "Barlow", sans-serif;
@@ -464,9 +480,25 @@ footer > a > img{
 
 @media screen and (min-width: 700px){
 
+	.topbuttons{
+	margin: 0 20px;
+	font-size: 28px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+
+#registerbutton{
+	padding: 16px 25px;
+}
+
+#loginbutton{
+		padding: 16px 42px;
+	}
+
     .buttons {
         display: flex;
-        justify-content: space-around
+        justify-content: center;
     }
 
 	.text{
@@ -495,10 +527,8 @@ footer > a > img{
 		font-size: 20px;
 	}
 
-	#button1{
-		font-size: 28px;
-		margin: 0 auto;
-		padding: 16px 25px;
+	#loginbutton{
+		margin-top: 0;
 	}
 
 	#button2{
