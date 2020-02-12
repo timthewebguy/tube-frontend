@@ -1,13 +1,5 @@
 <template>
-  <div>
-      	<header class="sticky" ref="sticky">
-              <a href="/">
-                <img src="/img/beta-primary-brian.svg" alt="Sourcery Logo" id="logo">
-              </a>
-            <p id="subhead">Your sources, like magic</p>
-        </header>
-    <nuxt />
-  </div>
+  <nuxt />
 </template>
 
 <script>
