@@ -21,13 +21,14 @@
 
                 <v-alert
                     :value="!canMakePayments"
-                    type="warning"
+                    :type='request.pricing.total ? "error" : "warning"'
                     class="mt-4 mb-4"
+                    transition="scale-transition"
                     >
                     You must add a credit card before submitting a request.
-                    <v-btn :to="{name: 'account-credit-cards'}">Add Card</v-btn>
+                    <v-btn depressed @click="dialog = true">Add Card</v-btn>
                 </v-alert>
-
+                
                 <label for="area" class="title">
 
                 </label>
@@ -165,7 +166,6 @@
                     <v-card-actions>
                         <v-layout
                             justify-space-between
-
                         >
 
                             <v-btn
@@ -185,7 +185,9 @@
                 </v-card>
 
             </v-flex>
-
+        <v-dialog v-model="dialog" width="450" max-width="100%">
+            <add-card @done="dialog= false"></add-card>
+        </v-dialog>
         </v-layout>
 
 
@@ -196,6 +198,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import addCard from "~/components/add-card.vue";
 import { db, functions } from '~/plugins/firebase-client-init.js'
 import { Utils } from '~/modules/utilities'
 
@@ -235,8 +238,12 @@ import { Utils } from '~/modules/utilities'
                 ],
                 formState: 1,
                 area: null,
-                loadingLocations: true
+                loadingLocations: true,
+                dialog: false
 			}
+        },
+        components: {
+        'add-card': addCard
         },
         async asyncData ({ params, store }) {
             let areaSelections = [];
