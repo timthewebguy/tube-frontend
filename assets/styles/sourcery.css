@@ -24,7 +24,7 @@ body {
     padding: 0 32px;
 }
 
-.v-btn.v-btn--outline {
+.v-btn.v-btn--outlined {
     border: 4px solid #DAD4EA;
 }
 /* Toast styles */

@@ -3,55 +3,53 @@
         <v-navigation-drawer
         class="primary"
         v-model="drawer"
-        dark
-        right
         app
         v-if="user"
         >
-            <v-list color="red" class="pa-0" three-line>
-                <v-list-tile>
-                    <v-list-tile-avatar size="50" class="mr-3">
+            <v-list class="pa-0" three-line>
+                <v-list-item>
+                    <v-list-item-avatar size="50" class="mr-3">
                         <img v-bind:src="gravatar">
-                    </v-list-tile-avatar>
-                    <v-list-tile-content v-if="this.user">
-                        <v-list-tile-title>{{this.user.displayName}}</v-list-tile-title>
-                        <v-list-tile-sub-title>{{this.user.email}}</v-list-tile-sub-title>
-                    </v-list-tile-content>
-                </v-list-tile>
+                    </v-list-item-avatar>
+                    <v-list-item-content v-if="this.user">
+                        <v-list-item-title>{{this.user.displayName}}</v-list-item-title>
+                        <v-list-item-sub-title>{{this.user.email}}</v-list-item-sub-title>
+                    </v-list-item-content>
+                </v-list-item>
             </v-list>
 
             <v-divider></v-divider>
 
             <v-list dense class="pt-0" two-line>
-                <v-list-tile
+                <v-list-item
                     v-for="item in items1"
                     :key="item.title"
                     :to = "item.link"
                     nuxt
                     active-class="accent accent--text text--lighten-5"
                 >
-                    <v-list-tile-action>
+                    <v-list-item-action>
                     <v-icon>{{ item.icon }}</v-icon>
-                    </v-list-tile-action>
+                    </v-list-item-action>
 
-                    <v-list-tile-content>
-                    <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-                    </v-list-tile-content>
-                </v-list-tile>
-                <v-list-tile @click="dialog=true" nuxt active-class>
-                    <v-list-tile-action>
+                    <v-list-item-content>
+                    <v-list-item-title>{{ item.title }}</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+                <v-list-item @click="dialog=true" nuxt active-class>
+                    <v-list-item-action>
                         <v-icon>power_settings_new</v-icon>
-                    </v-list-tile-action>
-                    <v-list-tile-content>
-                        <v-list-tile-title>Log Out</v-list-tile-title>
-                    </v-list-tile-content>
-                </v-list-tile>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title>Log Out</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
             </v-list>
 
 
 
         </v-navigation-drawer>
-		<v-toolbar color="white" light fixed app>
+		<v-app-bar color="white" light fixed app>
 
             <!-- <v-toolbar-side-icon @click.stop="drawer = !drawer" v-if="user"></v-toolbar-side-icon> -->
 
@@ -65,7 +63,7 @@
             <!-- <v-toolbar-side-icon style="visibility: hidden" v-if="user"></v-toolbar-side-icon> -->
 
 
-		</v-toolbar>
+		</v-app-bar>
 		<v-content pa-0>
 			<v-container fill-height>
 				<v-layout
@@ -76,7 +74,7 @@
 				</v-layout>
 			</v-container>
 		</v-content>
-        <v-bottom-nav
+        <v-bottom-navigation
             :value="true"
             app
             fixed
@@ -126,7 +124,7 @@
                 <v-icon>settings</v-icon>
             </v-btn>
 
-        </v-bottom-nav>
+        </v-bottom-navigation>
 
         <v-dialog
             v-model="dialog"

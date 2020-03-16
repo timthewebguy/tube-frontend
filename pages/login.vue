@@ -7,7 +7,7 @@
                     :value = loginError
                     type="error"
                     transition="slide-y-transition"
-                    outline>
+                    outlined>
                     Username or password is incorrect.
                 </v-alert>
                 <v-text-field 
@@ -21,7 +21,7 @@
                     validate-on-blur
                     prepend-icon="email"
                     autofocus
-                    box
+                    filled
                 ></v-text-field>
                 <span class="text-red" v-for="(err, index) in errors.email" :key="index">{{err}}</span>
                 <v-text-field 
@@ -35,17 +35,17 @@
                     :rules="[v => !!v || 'Password is required']"
                     prepend-icon="security"
                     validate-on-blur
-                    box
+                    filled
                 ></v-text-field>
                 <span class="text-red" v-for="(err, index) in errors.password" :key="index">{{err}}</span>
                 
                 <v-btn block depressed large type="submit" color="primary" :loading="loading" :disabled="loading">Log In</v-btn>
-                <v-btn block flat large to="/password">Forgot password?</v-btn>
+                <v-btn block text large to="/password">Forgot password?</v-btn>
 
                 <v-divider class="mt-3 mb-3"></v-divider>
 
                 <h2 class="text-xs-center">Don't Have an Account?</h2>
-                <v-btn block outline large color="primary" to="/register">Register</v-btn>
+                <v-btn block outlined large color="primary" to="/register">Register</v-btn>
 
 
             </v-form>

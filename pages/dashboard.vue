@@ -5,31 +5,31 @@
       <v-list two-line>
         <v-subheader>Your Requests</v-subheader>
         <v-divider></v-divider>
-        <v-list-tile v-if="requests.length == 0" to="/request/create">
-          <v-list-tile-content>
-            <v-list-tile-title>No Active Requests</v-list-tile-title>
-            <v-list-tile-sub-title>Click to create a new request.</v-list-tile-sub-title>
-          </v-list-tile-content>
-          <v-list-tile-action>
+        <v-list-item v-if="requests.length == 0" to="/request/create">
+          <v-list-item-content>
+            <v-list-item-title>No Active Requests</v-list-item-title>
+            <v-list-item-sub-title>Click to create a new request.</v-list-item-sub-title>
+          </v-list-item-content>
+          <v-list-item-action>
             <v-btn icon ripple>
               <v-icon color="grey lighten-1">add_circle</v-icon>
             </v-btn>
-          </v-list-tile-action>
-        </v-list-tile>
+          </v-list-item-action>
+        </v-list-item>
 
 
         <template  v-for="(request, index) in requests">
-          <v-list-tile
+          <v-list-item
           v-if="requests && !request.request().isArchived()"
           :key="request.id"
           :to="'/request/' + request.id"
           >
-            <v-list-tile-content>
-              <v-list-tile-title>{{ request.data().label }}</v-list-tile-title>
-              <v-list-tile-sub-title>{{ request.data().citation }}</v-list-tile-sub-title>
-            </v-list-tile-content>
+            <v-list-item-content>
+              <v-list-item-title>{{ request.data().label }}</v-list-item-title>
+              <v-list-item-sub-title>{{ request.data().citation }}</v-list-item-sub-title>
+            </v-list-item-content>
             <v-chip color="secondary" text-color="white">{{request.request().prettyStatus()}}</v-chip>
-          </v-list-tile>
+          </v-list-item>
           <v-divider v-if="index + 1 < requests.length" :key="`divider-${index}`"></v-divider>
         </template>
       </v-list>
@@ -39,26 +39,26 @@
         <v-subheader>Your Jobs</v-subheader>
         <v-divider></v-divider>
 
-        <v-list-tile v-if="jobs.length == 0" to="/jobs">
-          <v-list-tile-content>
-            <v-list-tile-title>No Active Jobs</v-list-tile-title>
-            <v-list-tile-sub-title>Click to find available jobs.</v-list-tile-sub-title>
-          </v-list-tile-content>
-          <v-list-tile-action>
+        <v-list-item v-if="jobs.length == 0" to="/jobs">
+          <v-list-item-content>
+            <v-list-item-title>No Active Jobs</v-list-item-title>
+            <v-list-item-sub-title>Click to find available jobs.</v-list-item-sub-title>
+          </v-list-item-content>
+          <v-list-item-action>
             <v-btn icon ripple>
               <v-icon color="grey lighten-1">search</v-icon>
             </v-btn>
-          </v-list-tile-action>
-        </v-list-tile>
+          </v-list-item-action>
+        </v-list-item>
 
         <template v-for="(job, index) in jobs">
-          <v-list-tile :key="index" :to="'/jobs/' + job.id">
-            <v-list-tile-content>
-              <v-list-tile-title>{{ job.data().label }}</v-list-tile-title>
-              <v-list-tile-sub-title>{{ job.data().citation }}</v-list-tile-sub-title>
-            </v-list-tile-content>
+          <v-list-item :key="index" :to="'/jobs/' + job.id">
+            <v-list-item-content>
+              <v-list-item-title>{{ job.data().label }}</v-list-item-title>
+              <v-list-item-sub-title>{{ job.data().citation }}</v-list-item-sub-title>
+            </v-list-item-content>
             <!-- <v-chip color="secondary" text-color="white">{{job.request().prettyStatus()}}</v-chip> -->
-          </v-list-tile>
+          </v-list-item>
           <v-divider v-if="index + 1 < jobs.length" :key="`divider-${index}`"></v-divider>
         </template>
       </v-list>

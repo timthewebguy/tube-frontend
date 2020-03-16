@@ -157,13 +157,15 @@ module.exports = {
      */
     vuetify: {
         theme: {
-            primary: '#654EA3',
-            secondary: '#4E4B51',
-            accent: '#53AFAC',
-            error: '#b71c1c'
-        },
-        options: {
-            customProperties: true
+            themes: {
+                dark: false,
+                light: {
+                    primary: '#654EA3',
+                    secondary: '#4E4B51',
+                    accent: '#53AFAC',
+                    error: '#b71c1c'
+                }
+            }
         }
     },
 
