@@ -6,21 +6,21 @@
         app
         v-if="user"
         >
-            <v-list class="pa-0" three-line>
+            <v-list nav two-line >
                 <v-list-item>
                     <v-list-item-avatar size="50" class="mr-3">
                         <img v-bind:src="gravatar">
                     </v-list-item-avatar>
                     <v-list-item-content v-if="this.user">
                         <v-list-item-title>{{this.user.displayName}}</v-list-item-title>
-                        <v-list-item-sub-title>{{this.user.email}}</v-list-item-sub-title>
+                        <v-list-item-subtitle>{{this.user.email}}</v-list-item-subtitle>
                     </v-list-item-content>
                 </v-list-item>
             </v-list>
 
             <v-divider></v-divider>
 
-            <v-list dense class="pt-0" two-line>
+            <v-list dense nav>
                 <v-list-item
                     v-for="item in items1"
                     :key="item.title"
@@ -36,16 +36,13 @@
                     <v-list-item-title>{{ item.title }}</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
-                <v-list-item @click="dialog=true" nuxt active-class>
-                    <v-list-item-action>
-                        <v-icon>power_settings_new</v-icon>
-                    </v-list-item-action>
-                    <v-list-item-content>
-                        <v-list-item-title>Log Out</v-list-item-title>
-                    </v-list-item-content>
-                </v-list-item>
             </v-list>
 
+        <template v-slot:append>
+            <div class="pa-2">
+                <v-btn block outlined depressed @click="dialog = true">Logout</v-btn>
+            </div>
+        </template>
 
 
         </v-navigation-drawer>
