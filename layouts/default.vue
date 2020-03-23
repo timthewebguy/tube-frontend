@@ -1,7 +1,6 @@
 <template>
 	<v-app id="tube">
         <v-navigation-drawer
-        class="primary"
         v-model="drawer"
         app
         v-if="user"
@@ -26,7 +25,7 @@
                     :key="item.title"
                     :to = "item.link"
                     nuxt
-                    active-class="accent accent--text text--lighten-5"
+                    active-class="primary lighten-5 primary--text text--darken-1"
                 >
                     <v-list-item-action>
                     <v-icon>{{ item.icon }}</v-icon>
@@ -76,49 +75,46 @@
             app
             fixed
             v-if="user && onboardingComplete"
+            color='primary'
         >
             <v-btn
                 flat
                 value="dashboard"
                 :to="{ name: 'dashboard' }"
-                color="primary"
 
             >
                 <span>Dashboard</span>
-                <v-icon>dashboard</v-icon>
+                <v-icon>mdi-view-dashboard</v-icon>
             </v-btn>
 
             <v-btn
                 flat
                 value="add"
                 to="/request/create"
-                color="primary"
             >
                 <span>New Request</span>
-                <v-icon>add_circle</v-icon>
+                <v-icon>mdi-playlist-edit</v-icon>
             </v-btn>
 
             <v-btn
                 flat
                 value="search"
                 to="/jobs"
-                color="primary"
 
             >
                 <span>Find Jobs</span>
-                <v-icon>search</v-icon>
+                <v-icon>mdi-magnify</v-icon>
             </v-btn>
 
             <v-btn
                 flat
                 value="settings"
-                color="primary"
                 active-class=""
                 :class="drawer ? 'v-btn--active' :''"
                 @click.stop="drawer = !drawer"
             >
                 <span>Settings</span>
-                <v-icon>settings</v-icon>
+                <v-icon>mdi-cog</v-icon>
             </v-btn>
 
         </v-bottom-navigation>
@@ -185,15 +181,15 @@ import md5 from 'md5'
             drawer: null,
             dialog: false,
             items1: [
-                { title: 'Edit Profile', icon: 'person', link: '/account/profile'},
-                { title: 'Payouts', icon: 'account_balance', link: '/account/payouts'},
-                { title: 'Payments', icon: 'credit_card', link: '/account/credit-cards'},
-                { title: 'Email Notifications', icon: 'notifications', link: '/settings/notifications'},
-                { title: 'History', icon: 'hourglass_full', link: '/request/history'},
-                { title: 'Privacy Policy', icon: 'enhanced_encryption', link: '/privacy'},
-                { title: 'Terms of Use', icon: 'subject', link: '/terms'},
-                { title: 'Help', icon: 'help', link: '/account/help'},
-                { title: 'Feedback', icon: 'feedback', link: '/settings/feedback'},
+                { title: 'Edit Profile', icon: 'mdi-account-edit', link: '/account/profile'},
+                { title: 'Payouts', icon: 'mdi-piggy-bank', link: '/account/payouts'},
+                { title: 'Payments', icon: 'mdi-credit-card-outline', link: '/account/credit-cards'},
+                { title: 'Notifications', icon: 'mdi-bell', link: '/settings/notifications'},
+                { title: 'History', icon: 'mdi-history', link: '/request/history'},
+                { title: 'Privacy Policy', icon: 'mdi-lock-plus', link: '/privacy'},
+                { title: 'Terms of Use', icon: 'mdi-text-subject', link: '/terms'},
+                { title: 'Help', icon: 'mdi-help-circle', link: '/account/help'},
+                { title: 'Feedback', icon: 'mdi-message-alert', link: '/settings/feedback'},
             ],
         }),
 

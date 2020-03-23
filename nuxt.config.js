@@ -26,7 +26,6 @@ module.exports = {
             { "name": "viewport", content: "width=device-width, initial-scale=1" }
 		],
 		link: [
-            {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Barlow:500,600,700,800&display=swap' },
             {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap' },
             { rel: 'icon', type: 'image/png', href: '/icon-256.png' }
         ],
@@ -40,8 +39,6 @@ module.exports = {
 	*/
 	css: [
 	    '~/assets/styles/sourcery.css',
-        'material-design-icons-iconfont/dist/material-design-icons.css',
-        'paymentfont/css/paymentfont.min.css'
     ],
 
 
@@ -140,7 +137,7 @@ module.exports = {
         ],
     },
 
-    modules: [
+    buildModules: [
         ['@nuxtjs/google-analytics', {
             id: 'UA-150639074',
             dev: false, // don't use in dev mode
@@ -148,7 +145,8 @@ module.exports = {
         '@nuxtjs/pwa',
         '@nuxtjs/axios',
         '@nuxtjs/toast',
-        '@nuxtjs/vuetify'
+        '@nuxtjs/vuetify',
+        'nuxt-webfontloader'
     ],
 
     /**
@@ -156,6 +154,9 @@ module.exports = {
      * @url https://github.com/nuxt-community/vuetify-module/
      */
     vuetify: {
+        defaultAssets: {
+            icons: 'mdi'
+        },
         theme: {
             themes: {
                 dark: false,
@@ -166,6 +167,17 @@ module.exports = {
                     error: '#b71c1c'
                 }
             }
+        },
+        customVariables: ['~/assets/styles/variables.scss'],
+        treeShake: true
+    },
+
+    /**
+     * Nuxt Webfont Loader
+     */
+    webfontloader: {
+        google: {
+            families: ['Barlow:500,600,700,800']
         }
     },
 

@@ -19,7 +19,7 @@
                     required
                     clearable
                     validate-on-blur
-                    prepend-icon="email"
+                    prepend-icon="mdi-email"
                     autofocus
                     filled
                 ></v-text-field>
@@ -30,10 +30,10 @@
                     label="Password"
                     required
                     :type="showPass ? 'text' : 'password'"
-                    :append-icon="showPass ? 'visibility' : 'visibility_off'"
+                    :append-icon="showPass ? 'mdi-visibility' : 'mdi-visibility_off'"
                     @click:append="showPass = !showPass"
                     :rules="[v => !!v || 'Password is required']"
-                    prepend-icon="security"
+                    prepend-icon="mdi-security"
                     validate-on-blur
                     filled
                 ></v-text-field>
