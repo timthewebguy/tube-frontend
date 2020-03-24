@@ -2,36 +2,36 @@
   <v-layout align-center>
       <v-flex xs12 sm6 offset-sm3 lg4 offset-lg4>
         <v-form @submit.prevent="save">
-            <h2 class="text-xs-center">What do you want to do?</h2>
+            <h2 class="text-center">What do you want to do?</h2>
             <v-card class="selection-card"
             v-ripple='{class: "primary--text"}'
             flat
             @click.native="selectResearcher()"
             :active='accountType == "researcher"'
             >
-                <v-card-text class="text-xs-center">
+                <v-card-title class="text-center">
                     I want to request documents.
-                </v-card-text>
+                </v-card-title>
             </v-card>
-            <p class="text-xs-center disclaimer-text">(requires credit card)</p>
+            <p class="text-center disclaimer-text">(requires credit card)</p>
             <v-card class="selection-card"
             v-ripple='{class: "primary--text"}'
             flat
             @click.native="selectSourcerer()"
             :active='accountType == "sourcerer"'>
-                <v-card-text class="text-xs-center">
+                <v-card-title class="text-center">
                     I want to fulfill document requests for other researchers.
-                </v-card-text>
+                </v-card-title>
             </v-card>
-            <p class="text-xs-center disclaimer-text">(requires debit card or bank info)</p>
-            <p class="text-xs-center regardless"> Regardless of how you initially sign up, you can still choose to submit or fulfill requests later on.</p>
+            <p class="text-center disclaimer-text">(requires debit card or bank info)</p>
+            <p class="text-center regardless"> Regardless of how you initially sign up, you can still choose to submit or fulfill requests later on.</p>
             <div class="hidden-xs-only">
                   <v-btn block large depressed type="submit" value="Register" color="primary" :disabled="disabled">NEXT</v-btn>
-                  <v-btn block large color="primary" outline to="/login">Cancel</v-btn>
+                  <v-btn block large color="primary" outlined to="/login">Cancel</v-btn>
                 </div>
             <v-card min-width="100%" class="bottom-buttons hidden-sm-and-up">
               <v-btn block large depressed type="submit" value="Register" color="primary" :disabled="disabled">NEXT</v-btn>
-              <v-btn block large color="primary" outline to="/login">Cancel</v-btn>
+              <v-btn block large color="primary" outlined to="/login">Cancel</v-btn>
             </v-card>
             <v-spacer style="height: 122px;"></v-spacer>
         </v-form>

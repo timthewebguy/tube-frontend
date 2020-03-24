@@ -148,7 +148,7 @@ import { mapGetters } from 'vuex'
   }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .pf {
     font-size: 1.2em;
     color: var(--v-primary-base)

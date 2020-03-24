@@ -11,23 +11,38 @@
 
                 <h1 style="width:100%">Create Request</h1>
 
-                <v-alert
+                <v-banner
                     :value="true"
                     type="info"
-                    class="mt-4 mb-4"
+                    two-line
                     >
+                    <v-avatar
+                    color="blue"
+                    slot="icon">
+                        <v-icon 
+                        info='mdi-information'
+                        dark
+                        >mdi-information</v-icon>
+                    </v-avatar>
                     During the beta, users can request documents located in the Boston and New York metro areas, and at the University of Connecticut.
-                </v-alert>
+                </v-banner>
 
                 <v-alert
                     :value="!canMakePayments"
                     type="warning"
                     class="mt-4 mb-4"
+                    prominent
                     >
-                    You must add a credit card before submitting a request.
-                    <v-btn :to="{name: 'account-credit-cards'}">Add Card</v-btn>
+                    <v-row align="center">
+                        <v-col class="grow">
+                            You must add a credit card before submitting a request.
+                        </v-col>
+                        <v-col class="shrink">
+                            <v-btn outlined :to="{name: 'account-credit-cards'}">Add Card</v-btn>
+                        </v-col>
+                    </v-row>
                 </v-alert>
-
+                
                 <label for="area" class="title">
 
                 </label>

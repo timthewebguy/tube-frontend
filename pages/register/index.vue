@@ -2,11 +2,12 @@
   <v-layout row fill-height align-center>
       <v-flex xs12 sm6 offset-sm3 lg4 offset-lg4 >
         <v-form @submit.prevent="registerValid">
-          <h1 class="text-xs-center">Register</h1>
+          <h1 class="text-center">Register</h1>
           <v-alert v-if="message" :value="true" type="error" class="mt-2 mb-2">{{message}}</v-alert>
             <v-alert
                 :value = errorEmpty
-                type="error">
+                type="error"
+                prominent>
                 <span color="white">All fields are required.</span>
             </v-alert>
             <v-text-field
@@ -19,8 +20,8 @@
               clearable
               autofocus="autofocus"
               validate-on-blur
-              prepend-icon="account_circle"
-              box
+              prepend-icon="mdi-account-circle"
+              filled
               background-color="#F3F1F6"
             ></v-text-field>
             <span class="red--text" v-for="(err, index) in errors.name" :key="index">{{err}}</span>
@@ -33,8 +34,8 @@
                 required
                 clearable
                 validate-on-blur
-                prepend-icon="email"
-                box
+                prepend-icon="mdi-email"
+                filled
                 background-color="#F3F1F6"
             ></v-text-field>
             <span class="red--text" v-for="(err, index) in errors.email" :key="index">{{err}}</span>
@@ -47,7 +48,7 @@
                 messages="At least 8 characters and 1 special character."
                 :rules="passRules"
                 :type="showPass ? 'text' : 'password'"
-                :append-icon="showPass ? 'visibility' : 'visibility_off'"
+                :append-icon="showPass ? 'mdi-eye' : 'mdi-eye-off'"
                 @click:append="showPass = !showPass"
                 required
                 counter
@@ -55,8 +56,8 @@
                 :success="password==confirm_password && password !=''"
                 validate-on-blur
                 loading
-                prepend-icon="security"
-                box
+                prepend-icon="mdi-security"
+                filled
                 background-color="#F3F1F6"
                 >
                 <template v-slot:progress>
@@ -64,6 +65,7 @@
                     :value="progress"
                     :color="color"
                     height="4"
+                    absolute
                     >
                   </v-progress-linear>
                 </template>
@@ -72,14 +74,14 @@
             <v-alert
                 :value = errorLength
                 type="warning"
-                outline
+                text
                 >
                 <span color="white">Password length must be at least 8 characters.</span>
             </v-alert>
             <v-alert
                 :value = errorSpecial
                 type="warning"
-                outline>
+                text>
                 <span color="white">Password must include a special character.</span>
             </v-alert>
                 <v-text-field
@@ -90,17 +92,17 @@
                 :rules="rules.required"
                 required
                 validate-on-blur
-                prepend-icon="phone"
-                box
+                prepend-icon="mdi-phone"
+                filled
                 background-color="#F3F1F6"
                 ></v-text-field>
                 <div class="hidden-xs-only">
-                  <v-btn block large depressed type="submit" value="Register" color="primary" :loading="loading">NEXT</v-btn>
-                  <v-btn block large color="primary" outline to="/login">Cancel</v-btn>
+                  <v-btn block large depressed type="submit" value="Register" color="primary" :loading="loading" class="mb-3">NEXT</v-btn>
+                  <v-btn block large color="primary" outlined to="/login">Cancel</v-btn>
                 </div>
             <v-card min-width="100%" class="bottom-buttons hidden-sm-and-up">
-              <v-btn block large depressed type="submit" value="Register" color="primary" :loading="loading">NEXT</v-btn>
-              <v-btn block large color="primary" outline to="/login">Cancel</v-btn>
+              <v-btn block large depressed type="submit" value="Register" color="primary" :loading="loading" class="mb-3" >NEXT</v-btn>
+              <v-btn block large color="primary" outlined to="/login">Cancel</v-btn>
             </v-card>
             <v-spacer style="height: 122px;"></v-spacer>
         </v-form>

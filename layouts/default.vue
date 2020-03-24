@@ -5,9 +5,13 @@
         app
         v-if="user"
         >
-            <v-list nav two-line >
+            <v-list
+            nav
+            two-line
+            rounded
+            >
                 <v-list-item>
-                    <v-list-item-avatar size="50" class="mr-3">
+                    <v-list-item-avatar class="mr-3">
                         <img v-bind:src="gravatar">
                     </v-list-item-avatar>
                     <v-list-item-content v-if="this.user">
@@ -39,7 +43,7 @@
 
         <template v-slot:append>
             <div class="pa-2">
-                <v-btn block outlined depressed @click="dialog = true">Logout</v-btn>
+                <v-btn block outlined depressed large @click="dialog = true">Logout</v-btn>
             </div>
         </template>
 
@@ -74,6 +78,8 @@
             :value="true"
             app
             fixed
+            grow
+            
             v-if="user && onboardingComplete"
             color='primary'
         >

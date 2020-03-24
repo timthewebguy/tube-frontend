@@ -1,9 +1,9 @@
 <template>
   <v-layout align-center>
       <v-flex xs12 sm6 offset-sm3 lg4 offset-lg4>
-            <h1 class="text-xs-center">You're almost done!</h1>
+            <h1 class="text-center">You're almost done!</h1>
             <template v-if="isResearcher">
-                <h2 class="text-xs-center primary--text text--darken-1">You want to request documents.</h2>
+                <h2 class="text-center primary--text text--darken-1">You want to request documents.</h2>
                 <p>To do this, you'll need to add a credit card to your account.
                     <v-dialog
                         v-model="dialog"
@@ -28,7 +28,7 @@
             </template>
 
             <template v-if="isSourcerer">
-                <h2 class="text-xs-center primary--text text--darken-1">You want to fulfill document requests for other researchers.</h2>
+                <h2 class="text-center primary--text text--darken-1">You want to fulfill document requests for other researchers.</h2>
                 <p>To do this, you'll need to add a debit card (or bank info) to your account. 
                     <v-dialog
                         v-model="dialog"
@@ -60,12 +60,12 @@
             <div class="hidden-xs-only">
                 <connect-button class="v-btn--large v-btn--block v-btn--depressed" @click="markComplete" v-if="isSourcerer"></connect-button>
                 <v-btn @click="markComplete" block large depressed v-if="isResearcher" color="primary" :to="{name: 'account-credit-cards'}">Add Card</v-btn>
-                <v-btn block large color="primary" outline @click.prevent="skip">Skip for Now</v-btn>
+                <v-btn block large color="primary" outlined @click.prevent="skip">Skip for Now</v-btn>
             </div>
             <v-card min-width="100%" class="bottom-buttons hidden-sm-and-up">
                 <connect-button class="v-btn--large v-btn--block v-btn--depressed" @click="markComplete" v-if="isSourcerer"></connect-button>
                 <v-btn @click="markComplete" block large depressed v-if="isResearcher" color="primary" :to="{name: 'account-credit-cards'}">Add Card</v-btn>
-                <v-btn block large color="primary" outline @click.prevent="skip">Skip for Now</v-btn>
+                <v-btn block large color="primary" outlined @click.prevent="skip">Skip for Now</v-btn>
             </v-card>
             <v-spacer style="height: 122px;"></v-spacer>
     </v-flex>

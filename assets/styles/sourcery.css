@@ -6,7 +6,7 @@ body {
     font-family: 'Barlow','Roboto', Arial, Helvetica, sans-serif;
     background: #FAF9FB;
 }
-.theme--light.application {
+.theme--light.v-application {
     background: #FAF9FB;
     color: #362C52;
 }
@@ -16,7 +16,7 @@ body {
     border-radius: 8px;
 }
 
-.v-btn--large {
+.v-btn.v-size--large {
     font-weight: 800;
     letter-spacing: .2px;
     font-size: 20px;

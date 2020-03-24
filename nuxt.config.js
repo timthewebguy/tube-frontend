@@ -38,7 +38,7 @@ module.exports = {
 	** CSS File
 	*/
 	css: [
-	    '~/assets/styles/sourcery.css',
+        '~/assets/styles/sourcery.css',
     ],
 
 
@@ -129,12 +129,12 @@ module.exports = {
 	** Router
 	*/
 	router: {
-		middleware: [
-            'auth',
-            'user-meta',
-            'account-type',
-            'onboarding-complete'
-        ],
+		// middleware: [
+        //     'auth',
+        //     'user-meta',
+        //     'account-type',
+        //     'onboarding-complete'
+        // ],
     },
 
     buildModules: [

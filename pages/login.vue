@@ -2,7 +2,7 @@
 	<v-layout row fill-height align-center>
         <v-flex xs12 sm6 offset-sm3 md4 offset-md4>
             <v-form @submit.prevent="login">
-                <h1 class="text-xs-center">Log In</h1>
+                <h1 class="text-center">Log In</h1>
                 <v-alert
                     :value = loginError
                     type="error"
@@ -39,12 +39,12 @@
                 ></v-text-field>
                 <span class="text-red" v-for="(err, index) in errors.password" :key="index">{{err}}</span>
                 
-                <v-btn block depressed large type="submit" color="primary" :loading="loading" :disabled="loading">Log In</v-btn>
+                <v-btn block depressed large type="submit" color="primary" :loading="loading" :disabled="loading" class='mb-3'>Log In</v-btn>
                 <v-btn block text large to="/password">Forgot password?</v-btn>
 
                 <v-divider class="mt-3 mb-3"></v-divider>
 
-                <h2 class="text-xs-center">Don't Have an Account?</h2>
+                <h2 class="text-center mb-3">Don't Have an Account?</h2>
                 <v-btn block outlined large color="primary" to="/register">Register</v-btn>
 
 

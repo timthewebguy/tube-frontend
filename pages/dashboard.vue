@@ -8,7 +8,7 @@
         <v-list-item v-if="requests.length == 0" to="/request/create">
           <v-list-item-content>
             <v-list-item-title>No Active Requests</v-list-item-title>
-            <v-list-item-sub-title>Click to create a new request.</v-list-item-sub-title>
+            <v-list-item-subtitle>Click to create a new request.</v-list-item-subtitle>
           </v-list-item-content>
           <v-list-item-action>
             <v-btn icon ripple>
@@ -26,7 +26,7 @@
           >
             <v-list-item-content>
               <v-list-item-title>{{ request.data().label }}</v-list-item-title>
-              <v-list-item-sub-title>{{ request.data().citation }}</v-list-item-sub-title>
+              <v-list-item-subtitle>{{ request.data().citation }}</v-list-item-subtitle>
             </v-list-item-content>
             <v-chip color="secondary" text-color="white">{{request.request().prettyStatus()}}</v-chip>
           </v-list-item>
@@ -42,11 +42,11 @@
         <v-list-item v-if="jobs.length == 0" to="/jobs">
           <v-list-item-content>
             <v-list-item-title>No Active Jobs</v-list-item-title>
-            <v-list-item-sub-title>Click to find available jobs.</v-list-item-sub-title>
+            <v-list-item-subtitle>Click to find available jobs.</v-list-item-subtitle>
           </v-list-item-content>
           <v-list-item-action>
             <v-btn icon ripple>
-              <v-icon color="grey lighten-1">search</v-icon>
+              <v-icon color="grey lighten-1">mdi-magnify</v-icon>
             </v-btn>
           </v-list-item-action>
         </v-list-item>
@@ -55,7 +55,7 @@
           <v-list-item :key="index" :to="'/jobs/' + job.id">
             <v-list-item-content>
               <v-list-item-title>{{ job.data().label }}</v-list-item-title>
-              <v-list-item-sub-title>{{ job.data().citation }}</v-list-item-sub-title>
+              <v-list-item-subtitle>{{ job.data().citation }}</v-list-item-subtitle>
             </v-list-item-content>
             <!-- <v-chip color="secondary" text-color="white">{{job.request().prettyStatus()}}</v-chip> -->
           </v-list-item>

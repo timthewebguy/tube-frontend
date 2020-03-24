@@ -4,9 +4,8 @@
             <h1>Profile</h1>
 
             <v-tabs
-                    slider-color="primary"
-
-
+                slider-color="primary"
+                grow
             >
                 <v-tab ripple>
                    User
