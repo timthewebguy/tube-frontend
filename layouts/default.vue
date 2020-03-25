@@ -3,7 +3,11 @@
         <v-navigation-drawer
         v-model="drawer"
         app
+        bottom
         v-if="user"
+        dark
+        color='primary'
+        right
         >
             <v-list
             nav
@@ -43,14 +47,14 @@
 
         <template v-slot:append>
             <div class="pa-2">
-                <v-btn block outlined depressed large @click="dialog = true">Logout</v-btn>
+                <v-btn block depressed light color="white" @click="dialog = true">Log out</v-btn>
             </div>
         </template>
 
 
         </v-navigation-drawer>
 		<v-app-bar color="white" light fixed app>
-
+            <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
             <!-- <v-toolbar-side-icon @click.stop="drawer = !drawer" v-if="user"></v-toolbar-side-icon> -->
 
             <v-toolbar-title style="display:flex; justify-content:center; width: 100%" class="ma-0">
@@ -112,7 +116,7 @@
                 <v-icon>mdi-magnify</v-icon>
             </v-btn>
 
-            <v-btn
+            <!-- <v-btn
                 flat
                 value="settings"
                 active-class=""
@@ -120,8 +124,8 @@
                 @click.stop="drawer = !drawer"
             >
                 <span>Settings</span>
-                <v-icon>mdi-cog</v-icon>
-            </v-btn>
+                <v-icon>mdi-cogs</v-icon>
+            </v-btn> -->
 
         </v-bottom-navigation>
 

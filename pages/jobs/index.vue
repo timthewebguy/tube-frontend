@@ -65,7 +65,7 @@
                   <v-container fill-height fluid>
                     <v-layout fill-height>
                       <v-flex xs2 align-center justify-center flexbox text-xs-center>
-                        <v-icon x-large>location_on</v-icon>
+                        <v-icon x-large>mdi-map-marker</v-icon>
                       </v-flex>
                       <v-flex xs10 align-end flexbox>
                         {{ job.data().repository.name }}

@@ -16,7 +16,7 @@ body {
     border-radius: 8px;
 }
 
-.v-btn.v-size--large {
+.v-btn:not(.v-btn--round).v-size--large {
     font-weight: 800;
     letter-spacing: .2px;
     font-size: 20px;
@@ -24,7 +24,7 @@ body {
     padding: 0 32px;
 }
 
-.v-btn.v-btn--outlined {
+.v-btn.v-btn--depressed.v-btn--flat.v-btn--outlined.v-btn--router.theme--light.v-size--large.primary--text {
     border: 4px solid #DAD4EA;
 }
 /* Toast styles */
