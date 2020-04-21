@@ -19,6 +19,7 @@
     }
   },
   "dependencies": {
+    "@firebase/testing": "^0.16.13",
     "@nuxtjs/axios": "^5.5.4",
     "@nuxtjs/google-analytics": "^2.2.0",
     "@nuxtjs/pwa": "^2.6.0",
