@@ -27,6 +27,7 @@
                 color="primary"
                 @change="getMessagingToken()"
                 :readonly="!deviceHasGeoLocation"
+                v-if="isSupported()"
                 ></v-switch>
             </v-card-text>
         </v-card>
@@ -55,6 +56,9 @@
 
         },
         methods: {
+            isSupported () {
+                return messaging ? true : false;
+            },
 
             updateNotifications: async function() {
                 this.$store.commit('meta/setAgent', this.agentBool)
@@ -63,14 +67,17 @@
             },
 
             getMessagingToken () {
-                messaging.getToken().then((token) => {
-                        console.log("Token: ", token);
-                        //this.token = token;
-                        this.changeSubscription(token)
-                        this.$store.commit('meta/setToken', token)
-                        this.$store.dispatch('meta/save', 'token');
-                        this.$toast.show('Token Saved!')
-                })
+                if (this.isSupported()) {
+                    messaging.getToken().then((token) => {
+                            console.log("Token: ", token);
+                            //this.token = token;
+                            this.changeSubscription(token)
+                            this.$store.commit('meta/setToken', token)
+                            this.$store.dispatch('meta/save', 'token');
+                            this.$toast.show('Token Saved!')
+                    })
+                }
+                else console.log("Not supported in this browser.")
             },
 
             changeSubscription: async function(token) {

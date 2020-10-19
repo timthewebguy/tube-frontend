@@ -43,13 +43,22 @@ if(process.env.EMULATOR){
     });
 }
 
-
 export const db = firestore;
 export const GeoPoint = firebase.Geopoint;
 export const storage = firebase.storage();
 export const FieldValue = firebase.firestore.FieldValue;
 export const functions = firebase.functions();
-export const messaging = firebase.messaging();
+
+
+//Export cloud messaging
+let messageTest = null;
+try {
+      messageTest = firebase.messaging();
+    } catch {
+      console.log("Firebase cloud messaging not enabled in this browser.");
+    };
+export const messaging = messageTest;
+
 
 // Auth
 firebase.auth().useDeviceLanguage();
