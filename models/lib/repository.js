@@ -21,20 +21,20 @@ class Repository extends Doc {
     })
     country_code;
 
-    @IsObject()
+    // @IsObject()
     geo;
 
     @IsNotEmpty({
-        message: "Please use a valid postal code."
+        message: "Please use a valid institution name."
     })
     institution;
 
     @IsNotEmpty({
-        message: "Please use a valid postal code."
+        message: "Name cannot be empty."
     })
     name;
 
-    @IsPostalCode({
+    @IsPostalCode('any', {
         message: "Please use a valid postal code."
     })
     postal_code;
