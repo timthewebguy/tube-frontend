@@ -23,8 +23,6 @@ function getRepo(){
 }
 
 
-
-
 /**
  * Property Validation Tests
  */
